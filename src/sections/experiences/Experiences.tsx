@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import ExperienceCard from './ExperienceCard.tsx';
-import {GITHUB_RAW_BASE} from '../../constants.ts';
-import type { ExperienceItem } from '../../types.ts';
+import {CONTENT_BASE} from '../../constants.ts';
+import type {ExperienceItem} from '../../types.ts';
 
 
 const Experiences: React.FC = () => {
@@ -10,7 +10,7 @@ const Experiences: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        fetch(`${GITHUB_RAW_BASE}/content/experiences.json?ts=${Date.now()}`)
+        fetch(`${CONTENT_BASE}experiences.json`)
             .then((res) => {
                 if (!res.ok) throw new Error('Failed to load experiences.json');
                 return res.json();

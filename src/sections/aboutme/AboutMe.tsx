@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { GITHUB_RAW_BASE } from "../../constants.ts";
-import type { AboutMeData } from "../../types.ts";
+import React, {useEffect, useState} from "react";
+import {CONTENT_BASE} from "../../constants.ts";
+import type {AboutMeData} from "../../types.ts";
 
 const AboutMe: React.FC = () => {
     const [data, setData] = useState<AboutMeData | null>(null);
@@ -8,7 +8,7 @@ const AboutMe: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        fetch(`${GITHUB_RAW_BASE}/content/aboutme.json?ts=${Date.now()}`)
+        fetch(`${CONTENT_BASE}aboutme.json`)
             .then((res) => {
                 if (!res.ok) throw new Error("Failed to load aboutme.json");
                 return res.json();
@@ -29,7 +29,7 @@ const AboutMe: React.FC = () => {
     return (
         <div className="text-white text-center">
             <img
-                src={`${GITHUB_RAW_BASE}/content/profile_picture.png`}
+                src={`${CONTENT_BASE}profile_picture.png`}
                 alt="Profile"
                 className="w-75 h-75 md:w-100 md:h-100 rounded-full mx-auto mb-4 shadow-lg object-cover"
             />
@@ -51,8 +51,8 @@ const AboutMe: React.FC = () => {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                 >
-                    <path d="M4 4h16v16H4z" fill="none" />
-                    <polyline points="4,4 12,13 20,4" />
+                    <path d="M4 4h16v16H4z" fill="none"/>
+                    <polyline points="4,4 12,13 20,4"/>
                 </svg>
             </a>
 

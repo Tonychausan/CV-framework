@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import EductionCard from './EductionCard.tsx';
-import {GITHUB_RAW_BASE} from '../../constants.ts';
+import {CONTENT_BASE} from '../../constants.ts';
 import type {EducationItem} from '../../types.ts';
 
 
@@ -10,7 +10,7 @@ const Educations: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        fetch(`${GITHUB_RAW_BASE}/content/educations.json?ts=${Date.now()}`)
+        fetch(`${CONTENT_BASE}educations.json`)
             .then((res) => {
                 if (!res.ok) throw new Error('Failed to load educations.json');
                 return res.json();
