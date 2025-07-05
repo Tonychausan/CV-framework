@@ -11,12 +11,15 @@ This project allows anyone to build and host their own web-based CV by forking t
 [https://tonychausan.github.io/CV-framework](https://tonychausan.github.io/CV-framework)
 
 ## Development
+
 ### Run locally
-```npm run dev```
+
+`npm run dev`
 
 ## Deployment
+
 Build the application\
-```npm run build```
+`npm run build`
 
 Then publish it to GitHub pages\
-```npm run deploy```
+`npm run deploy`

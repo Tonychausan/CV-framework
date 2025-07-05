@@ -1,22 +1,22 @@
 export type AboutMeData = {
-    name: string;
-    email: string;
-    role: string;
-    description: string;
-};
+  name: string
+  email: string
+  role: string
+  description: string
+}
 
 export type ExperienceItem = {
-    workplace: string;
-    fromTime: string;
-    toTime: string;
-    workTitle: string;
-    description: string;
-};
+  workplace: string
+  fromTime: string
+  toTime: string
+  workTitle: string
+  description: string
+}
 
 export type EducationItem = {
-    name: string;
-    fromTime: string;
-    toTime: string;
-    education: string;
-    description: string;
-};
+  name: string
+  fromTime: string
+  toTime: string
+  education: string
+  description: string
+}

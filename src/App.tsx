@@ -1,21 +1,22 @@
-import './App.css'
-import Experiences from "./sections/experiences/Experiences.tsx";
-import AboutMe from "./sections/aboutme/AboutMe.tsx";
-import Educations from "./sections/education/Educations.tsx";
+import "./App.css"
+import Experiences from "./sections/experiences/Experiences.tsx"
+import AboutMe from "./sections/aboutme/AboutMe.tsx"
+import Educations from "./sections/education/Educations.tsx"
+import Header from "./sections/header/Header.tsx"
 
 function App() {
-
-    return (
-        <div className="flex flex-col md:flex-row md:h-screen">
-            <div className="w-full h-screen md:h-auto md:w-1/3  p-4 overflow-visible">
-                <AboutMe/>
-            </div>
-            <div className="w-full md:w-2/3 p-4 overflow-y-auto">
-                <Experiences/>
-                <Educations/>
-            </div>
-        </div>
-    )
+  return (
+    <div className="h-screen bg-amber-950">
+      <div className="w-full h-screen p-4">
+        <Header />
+        <AboutMe />
+      </div>
+      <div className="w-full p-4 overflow-y-auto">
+        <Experiences />
+        <Educations />
+      </div>
+    </div>
+  )
 }
 
 export default App
