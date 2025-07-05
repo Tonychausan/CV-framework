@@ -1,38 +1,23 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
+import { useSelector } from "react-redux"
 
-import { CONTENT_BASE } from "../../constants.ts"
 import type { ExperienceItem } from "../../types.ts"
+import type { RootState } from "../../store/store.ts"
 
 import ExperienceCard from "./ExperienceCard.tsx"
 
 const Experiences: React.FC = () => {
-  const [experiences, setExperiences] = useState<ExperienceItem[]>([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+  const { experiences, loading, error } = useSelector(
+    (state: RootState) => state.content,
+  )
 
-  useEffect(() => {
-    fetch(`${CONTENT_BASE}experiences.json`)
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to load experiences.json")
-        return res.json()
-      })
-      .then((data: ExperienceItem[]) => {
-        setExperiences(data)
-        setLoading(false)
-      })
-      .catch((err) => {
-        setError(err.message)
-        setLoading(false)
-      })
-  }, [])
-
-  if (loading) return <p className="text-white">Loading experience...</p>
-  if (error) return <p className="text-red-400">Error: {error}</p>
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error: {error}</p>
 
   return (
     <section>
       <h2 className="text-2xl font-bold mb-4 text-white">Experiences</h2>
-      {experiences.map((exp, index) => (
+      {experiences.map((exp: ExperienceItem, index) => (
         <ExperienceCard key={index} experience={exp} />
       ))}
     </section>

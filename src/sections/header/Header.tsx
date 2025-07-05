@@ -1,31 +1,16 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
+import { useSelector } from "react-redux"
 
 import { CONTENT_BASE } from "../../constants.ts"
-import type { AboutMeData } from "../../types.ts"
+import type { RootState } from "../../store/store.ts"
 
 const Header: React.FC = () => {
-  const [data, setData] = useState<AboutMeData | null>(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+  const { aboutMe, loading, error } = useSelector(
+    (state: RootState) => state.content,
+  )
 
-  useEffect(() => {
-    fetch(`${CONTENT_BASE}aboutme.json`)
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to load aboutme.json")
-        return res.json()
-      })
-      .then((json: AboutMeData) => {
-        setData(json)
-        setLoading(false)
-      })
-      .catch((err) => {
-        setError(err.message)
-        setLoading(false)
-      })
-  }, [])
-
-  if (loading) return <p className="text-white">Loading...</p>
-  if (error) return <p className="text-red-400">Error: {error}</p>
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error: {error}</p>
 
   return (
     <div className="text-white text-center">
@@ -34,11 +19,11 @@ const Header: React.FC = () => {
         alt="Profile"
         className="w-75 h-75 md:w-100 md:h-100 rounded-full mx-auto mb-4 shadow-lg object-cover"
       />
-      <h1 className="text-xl font-bold mb-4">{data?.name}</h1>
-      <h2 className="text-xl font-bold mb-4">{data?.role}</h2>
+      <h1 className="text-xl font-bold mb-4">{aboutMe?.name}</h1>
+      <h2 className="text-xl font-bold mb-4">{aboutMe?.role}</h2>
 
       <a
-        href={`mailto:${data?.email}`}
+        href={`mailto:${aboutMe?.email}`}
         className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-white text-white hover:bg-gray-100 transition mb-2"
         aria-label="Email"
       >

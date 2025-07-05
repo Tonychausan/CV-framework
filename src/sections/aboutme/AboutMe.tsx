@@ -1,35 +1,19 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
+import { useSelector } from "react-redux"
 
-import { CONTENT_BASE } from "../../constants.ts"
-import type { AboutMeData } from "../../types.ts"
+import type { RootState } from "../../store/store.ts"
 
 const AboutMe: React.FC = () => {
-  const [data, setData] = useState<AboutMeData | null>(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+  const { aboutMe, loading, error } = useSelector(
+    (state: RootState) => state.content,
+  )
 
-  useEffect(() => {
-    fetch(`${CONTENT_BASE}aboutme.json`)
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to load aboutme.json")
-        return res.json()
-      })
-      .then((json: AboutMeData) => {
-        setData(json)
-        setLoading(false)
-      })
-      .catch((err) => {
-        setError(err.message)
-        setLoading(false)
-      })
-  }, [])
-
-  if (loading) return <p className="text-white">Loading...</p>
-  if (error) return <p className="text-red-400">Error: {error}</p>
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error: {error}</p>
 
   return (
     <div className="text-white text-center">
-      <p className="text-sm leading-relaxed">{data?.description}</p>
+      <p className="text-sm leading-relaxed">{aboutMe?.description}</p>
     </div>
   )
 }
