@@ -20,3 +20,8 @@ export type EducationItem = {
   education: string
   description: string
 }
+
+export interface LanguageItem {
+  language: string
+  level: number
+}
