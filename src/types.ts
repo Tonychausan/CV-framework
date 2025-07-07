@@ -25,3 +25,11 @@ export interface LanguageItem {
   language: string
   level: number
 }
+
+export interface ContactData {
+  email?: string
+  phone?: string
+  linkedin?: string
+  instagram?: string
+  facebook?: string
+}

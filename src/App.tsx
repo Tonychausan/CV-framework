@@ -2,12 +2,12 @@ import "./App.css"
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
 
-import Experiences from "./sections/experiences/Experiences.tsx"
-import Educations from "./sections/education/Educations.tsx"
-import Header from "./sections/header/Header.tsx"
 import { fetchAllContent } from "./store/contentSlice.ts"
 import type { AppDispatch } from "./store/store.ts"
-import { Languages } from "./sections/language/Languages.tsx"
+import Header from "./sections/header/Header.tsx"
+import Educations from "./sections/education/Educations.tsx"
+import Experiences from "./sections/experiences/Experiences.tsx"
+import Languages from "./sections/language/Languages.tsx"
 
 function App() {
   const dispatch = useDispatch<AppDispatch>()

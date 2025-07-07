@@ -16,11 +16,6 @@ const AboutMe: React.FC = () => {
       <h1 className="text-7xl font-bold mb-4">Tony Chau</h1>
       <h2 className="text-2xl font-semibold mb-4">{aboutMe?.role}</h2>
       <p className="leading-relaxed mb-4">{aboutMe?.description}</p>
-      <div className="w-full flex justify-center md:justify-start">
-        <button className="px-6 py-2 bg-white text-black rounded shadow mb-2">
-          Contacts
-        </button>
-      </div>
     </div>
   )
 }

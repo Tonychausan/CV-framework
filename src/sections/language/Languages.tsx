@@ -20,7 +20,13 @@ export const Languages: React.FC = () => {
         <h2 className="text-2xl font-bold text-white">Languages</h2>
         <div className="relative group">
           <Info className="w-5 h-5 text-white cursor-pointer" />
-          <div className="absolute z-10 left-6 top-0 w-64 bg-gray-900 text-gray-200 text-sm p-3 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+          <div
+            className="
+        absolute left-1/2 top-full mt-2 -translate-x-1/2
+        w-64 p-3 rounded shadow-lg text-sm text-gray-200 bg-gray-900
+        opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10
+      "
+          >
             <p className="mb-1">1–3: Basic understanding</p>
             <p className="mb-1">4–6: Intermediate conversational</p>
             <p className="mb-1">7–9: Advanced or professional</p>
@@ -37,3 +43,5 @@ export const Languages: React.FC = () => {
     </section>
   )
 }
+
+export default Languages
