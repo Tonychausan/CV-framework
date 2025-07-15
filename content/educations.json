@@ -1,15 +1,15 @@
 [
   {
     "name": "NTNU - Gløshaugen",
-    "fromTime": "Aug. 2011",
-    "toTime": "Jul. 2017",
-    "workTitle": "Computer science",
+    "fromTime": "2011",
+    "toTime": "2017",
+    "education": "Computer science",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper a lacus vestibulum sed. Scelerisque eleifend donec pretium vulputate sapien. Eu lobortis elementum nibh tellus molestie. Quis varius quam quisque id diam. Aliquam sem et tortor consequat id porta nibh venenatis cras. "
   },
   {
     "name": "Tokyo University",
-    "fromTime": "Mar. 2015",
-    "toTime": "Jan. 2016",
+    "fromTime": "2015",
+    "toTime": "2016",
     "education": "Computer science",
     "description": "Ut ornare lectus sit amet est. Ligula ullamcorper malesuada proin libero nunc. Sed cras ornare arcu dui. Fames ac turpis egestas maecenas pharetra convallis posuere morbi leo."
   }
