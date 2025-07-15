@@ -23,9 +23,9 @@ const modalVariants = {
 }
 
 const Contacts: React.FC<ContactsProps> = ({ onClose }) => {
-  const { contact, loading } = useSelector((state: RootState) => state.content)
+  const { contact } = useSelector((state: RootState) => state.content)
 
-  if (loading || !contact) return null
+  if (!contact) return null
 
   const { email, phone, facebook, instagram, linkedin } = contact as ContactData
 
