@@ -6,6 +6,7 @@ import { CONTENT_BASE } from "../../constants.ts"
 import type { RootState } from "../../store/store.ts"
 import AboutMe from "../aboutme/AboutMe.tsx"
 import Contacts from "../../components/Contact.tsx"
+import DownloadCVButton from "../../components/DownloadCVButton .tsx"
 
 const Header: React.FC = () => {
   const { loading, error } = useSelector((state: RootState) => state.content)
@@ -24,15 +25,16 @@ const Header: React.FC = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 100 }}
-              transition={{ duration: 5 }}
-              className="flex justify-center lg:justify-start"
+              transition={{ duration: 2 }}
+              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-4"
             >
               <button
                 onClick={() => setShowModal(true)}
-                className="bg-white text-amber-950 px-5 py-2.5 rounded-lg shadow hover:bg-gray-100 transition mb-4"
+                className="bg-white text-amber-950 px-5 py-2.5 rounded-lg shadow hover:bg-gray-100 transition"
               >
-                Contact Me
+                Contacts
               </button>
+              <DownloadCVButton />
             </motion.div>
           </div>
           <div className="order-1 lg:order-2 flex justify-center lg:justify-start">

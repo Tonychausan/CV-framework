@@ -3,6 +3,7 @@ import { useSelector } from "react-redux"
 import { Info } from "lucide-react"
 
 import type { RootState } from "../../store/store"
+import { SECTION_TITLES } from "../../constants.ts"
 
 import LanguageCard from "./LanguageCard"
 
@@ -17,7 +18,9 @@ export const Languages: React.FC = () => {
   return (
     <section>
       <div className="flex items-center gap-2 mb-4">
-        <h2 className="text-2xl font-bold text-white">Languages</h2>
+        <h2 className="text-2xl font-bold text-white">
+          {SECTION_TITLES.languages}
+        </h2>
         <div className="relative group">
           <Info className="w-5 h-5 text-white cursor-pointer" />
           <div
