@@ -2,7 +2,6 @@ import "./App.css"
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { AnimatePresence, motion } from "framer-motion"
-import { PDFViewer } from "@react-pdf/renderer"
 
 import { fetchAllContent } from "./store/contentSlice.ts"
 import type { AppDispatch, RootState } from "./store/store.ts"
@@ -11,14 +10,10 @@ import Educations from "./sections/education/Educations.tsx"
 import Experiences from "./sections/experiences/Experiences.tsx"
 import Languages from "./sections/language/Languages.tsx"
 import Loading from "./sections/Loading.tsx"
-import PDFDocument from "./components/PDFDocument.tsx"
 
 function App() {
   const dispatch = useDispatch<AppDispatch>()
   const { loading, error } = useSelector((state: RootState) => state.content)
-  const { aboutMe, experiences, educations, languages, contact } = useSelector(
-    (state: RootState) => state.content,
-  )
 
   const [minimumDelayReached, setMinimumDelayReached] = useState(false)
 
@@ -60,17 +55,6 @@ function App() {
             <h2 className="text-white text-2xl font-bold mb-4 text-center">
               PDF Preview
             </h2>
-            <div className="w-full h-[90vh] bg-white shadow-xl border">
-              <PDFViewer width="100%" height="100%">
-                <PDFDocument
-                  aboutMe={aboutMe || null}
-                  experiences={experiences || []}
-                  educations={educations || []}
-                  languages={languages || []}
-                  contacts={contact || null}
-                />
-              </PDFViewer>
-            </div>
           </div>
           <div className="px-4 max-w-[1600px] w-full mx-auto grid grid-cols-1 lg:grid-cols-10 gap-8">
             <div className="lg:col-span-7 lg:order-1">

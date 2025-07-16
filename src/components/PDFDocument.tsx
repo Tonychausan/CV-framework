@@ -77,7 +77,7 @@ const PDFDocument: React.FC<PDFDocumentProps> = ({
       >
         <View style={{ alignItems: "center" }}>
           <Image
-            src={`${CONTENT_BASE}profile_picture.png`}
+            src={`${CONTENT_BASE}pdf_picture.png`}
             style={{
               width: 200,
               height: 200,

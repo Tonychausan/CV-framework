@@ -10,12 +10,21 @@ import PDFDocument from "./PDFDocument"
 
 const DownloadCVButton: React.FC = () => {
   const [loading, setLoading] = useState(false)
-  const content = useSelector((state: RootState) => state.content)
-
+  const { aboutMe, experiences, educations, languages, contact } = useSelector(
+    (state: RootState) => state.content,
+  )
   const handleDownload = async () => {
     setLoading(true)
     try {
-      const blob = await pdf(<PDFDocument {...content} />).toBlob()
+      const blob = await pdf(
+        <PDFDocument
+          aboutMe={aboutMe}
+          experiences={experiences}
+          educations={educations}
+          languages={languages}
+          contacts={contact}
+        />,
+      ).toBlob()
       const url = URL.createObjectURL(blob)
       const link = document.createElement("a")
       link.href = url

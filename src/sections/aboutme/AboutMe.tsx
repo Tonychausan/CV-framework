@@ -30,7 +30,7 @@ const AboutMe: React.FC = () => {
           words={[aboutMe?.description || ""]}
           cursor={false}
           cursorStyle="|"
-          typeSpeed={3}
+          typeSpeed={1}
         />
       </p>
     </div>
