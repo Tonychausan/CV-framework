@@ -50,13 +50,10 @@ function App() {
           transition={{ duration: 0.4 }}
           className="h-full"
         >
-          <Header />
-          <div className="mt-16">
-            <h2 className="text-white text-2xl font-bold mb-4 text-center">
-              PDF Preview
-            </h2>
+          <div className="shadow-xl">
+            <Header />
           </div>
-          <div className="px-4 max-w-[1600px] w-full mx-auto grid grid-cols-1 lg:grid-cols-10 gap-8">
+          <div className="mt-4 px-4 max-w-[1600px] w-full mx-auto grid grid-cols-1 lg:grid-cols-10 gap-8">
             <div className="lg:col-span-7 lg:order-1">
               <Experiences />
             </div>

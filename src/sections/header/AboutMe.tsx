@@ -14,18 +14,18 @@ const AboutMe: React.FC = () => {
   if (error) return <p>Error: {error}</p>
 
   return (
-    <div className="text-white">
-      <h1 className="lg:text-7xl text-4xl font-bold mb-4 flex justify-center lg:justify-start">
+    <div className="">
+      <h1 className="text-red-400 lg:text-7xl text-4xl font-bold mb-4 flex justify-center lg:justify-start">
         <Typewriter words={[NAME]} cursor={false} typeSpeed={80} />
       </h1>
-      <h2 className="lg:text-2xl text-xl font-semibold mb-4 flex justify-center lg:justify-start">
+      <h2 className="text-red-200 lg:text-2xl text-xl font-semibold mb-4 flex justify-center lg:justify-start">
         <Typewriter
           words={[aboutMe?.role || ""]}
           cursor={false}
           typeSpeed={80}
         />
       </h2>
-      <p className="leading-relaxed mb-4 text-justify">
+      <p className="text-red-50 leading-relaxed mb-4 text-justify">
         <Typewriter
           words={[aboutMe?.description || ""]}
           cursor={false}

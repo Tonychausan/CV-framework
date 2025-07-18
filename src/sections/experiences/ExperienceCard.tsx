@@ -17,7 +17,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 0.6 }}
-      className="mb-6 bg-gray-800 rounded-lg shadow-md overflow-hidden backdrop-blur-md border border-gray-700"
+      className="mb-6 bg-stone-850 border-stone-950 border rounded-lg overflow-hidden"
     >
       <button
         onClick={() => setExpanded(!expanded)}
@@ -25,7 +25,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
       >
         <div>
           <h3 className="text-lg font-semibold">{experience.workTitle}</h3>
-          <p className="text-sm text-gray-300">{experience.workplace}</p>
+          <p className="text-sm text-red-300">{experience.workplace}</p>
           <p className="text-sm text-gray-400">
             {experience.fromTime} – {experience.toTime}
           </p>
@@ -47,9 +47,9 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="overflow-hidden bg-gray-700"
+            className="overflow-hidden text-white bg-stone-900"
           >
-            <div className="px-4 py-4 text-sm text-gray-200 leading-relaxed bg-amber-950">
+            <div className="px-4 py-4 text-sm leading-relaxed">
               {experience.description}
             </div>
           </motion.div>

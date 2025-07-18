@@ -43,10 +43,10 @@ const DownloadCVButton: React.FC = () => {
   return (
     <button
       onClick={handleDownload}
-      className="bg-white text-amber-950 px-5 py-2.5 rounded-lg shadow hover:bg-gray-100 transition"
+      className="bg-red-200 text-amber-950 px-5 py-2.5 rounded-lg shadow hover:bg-gray-100 transition"
       disabled={loading}
     >
-      {loading ? "Generating..." : "Download CV"}
+      {loading ? "Generating..." : "PDF-version"}
     </button>
   )
 }
