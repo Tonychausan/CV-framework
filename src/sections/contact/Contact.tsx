@@ -4,8 +4,10 @@ import { AnimatePresence, motion } from "framer-motion"
 import { SiFacebook, SiInstagram, SiLinkedin } from "react-icons/si"
 import { MdEmail, MdPhone } from "react-icons/md"
 
-import type { RootState } from "../store/store.ts"
-import type { ContactData } from "../types.ts"
+import type { RootState } from "../../store/store.ts"
+import type { ContactData } from "../../types.ts"
+
+import SocialMediaIcon from "./SocialMediaIcon.tsx"
 
 interface ContactsProps {
   onClose: () => void
@@ -32,7 +34,7 @@ const Contacts: React.FC<ContactsProps> = ({ onClose }) => {
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center"
+        className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center"
         initial="hidden"
         animate="visible"
         exit="hidden"
@@ -40,7 +42,7 @@ const Contacts: React.FC<ContactsProps> = ({ onClose }) => {
         onClick={onClose}
       >
         <motion.div
-          className="bg-white text-black rounded-lg p-6 relative w-full max-w-md shadow-lg"
+          className="bg-stone-800 text-black rounded-lg p-6 relative w-full max-w-md shadow-lg border border-stone-600"
           variants={modalVariants}
           initial="hidden"
           animate="visible"
@@ -59,12 +61,12 @@ const Contacts: React.FC<ContactsProps> = ({ onClose }) => {
           <div className="space-y-3 mb-6">
             {email && (
               <div className="flex items-center gap-3 text-gray-800">
-                <div className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100">
+                <div className="w-8 h-8 flex items-center justify-center rounded-full bg-white">
                   <MdEmail size={18} />
                 </div>
                 <a
                   href={`mailto:${email}`}
-                  className="text-blue-600 underline break-all"
+                  className="underline break-all text-white"
                 >
                   {email}
                 </a>
@@ -72,44 +74,41 @@ const Contacts: React.FC<ContactsProps> = ({ onClose }) => {
             )}
             {phone && (
               <div className="flex items-center gap-3 text-gray-800">
-                <div className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100">
+                <div className="w-8 h-8 flex items-center justify-center rounded-full bg-white">
                   <MdPhone size={18} />
                 </div>
-                {phone}
+                <div className="text-white">{phone}</div>
               </div>
             )}
           </div>
 
           <div className="flex items-center gap-4">
             {linkedin && (
-              <a
+              <SocialMediaIcon
                 href={linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-blue-100 text-gray-600 hover:text-blue-600 transition"
+                hoverBgColor="bg-blue-100"
+                hoverTextColor="text-blue-600"
               >
                 <SiLinkedin size={20} />
-              </a>
+              </SocialMediaIcon>
             )}
             {instagram && (
-              <a
+              <SocialMediaIcon
                 href={instagram}
-                target="_blank"
-                rel="noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-pink-100 text-gray-600 hover:text-pink-500 transition"
+                hoverBgColor="bg-pink-100"
+                hoverTextColor="text-pink-500"
               >
                 <SiInstagram size={20} />
-              </a>
+              </SocialMediaIcon>
             )}
             {facebook && (
-              <a
+              <SocialMediaIcon
                 href={facebook}
-                target="_blank"
-                rel="noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-blue-100 text-gray-600 hover:text-blue-800 transition"
+                hoverBgColor="bg-blue-100"
+                hoverTextColor="text-blue-800"
               >
                 <SiFacebook size={20} />
-              </a>
+              </SocialMediaIcon>
             )}
           </div>
         </motion.div>

@@ -1,21 +1,14 @@
 import React, { useState } from "react"
-import { useSelector } from "react-redux"
 import { motion } from "framer-motion"
 
 import { CONTENT_BASE } from "../../constants.ts"
-import type { RootState } from "../../store/store.ts"
-import Contacts from "../../components/Contact.tsx"
-import DownloadCVButton from "../../components/DownloadCVButton .tsx"
+import Contacts from "../contact/Contact.tsx"
 
+import DownloadCVButton from "./DownloadCVButton .tsx"
 import AboutMe from "./AboutMe.tsx"
 
 const Header: React.FC = () => {
-  const { loading, error } = useSelector((state: RootState) => state.content)
   const [showModal, setShowModal] = useState(false)
-
-  if (loading) return <p className="text-center mt-10 text-white">Loading...</p>
-  if (error)
-    return <p className="text-center mt-10 text-red-400">Error: {error}</p>
 
   return (
     <div
@@ -25,7 +18,7 @@ const Header: React.FC = () => {
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black opacity-80 z-0" />
+      <div className="absolute inset-0 bg-stone-800 opacity-70 z-0" />
 
       {/* Content */}
       <div className="relative z-10 max-w-[1600px] mx-auto px-8 lg:px-20 min-h-screen flex items-center justify-center">
@@ -33,9 +26,9 @@ const Header: React.FC = () => {
           <div className="order-2 lg:order-1 space-y-6">
             <AboutMe />
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 100 }}
-              transition={{ duration: 2 }}
+              initial={{ x: -10, opacity: 0 }}
+              animate={{ x: 0, opacity: 100 }}
+              transition={{ duration: 1, ease: "easeIn" }}
               className="flex sm:flex-row items-center justify-center lg:justify-start gap-4 mb-4"
             >
               <button

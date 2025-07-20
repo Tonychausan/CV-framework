@@ -3,10 +3,10 @@ import React, { useState } from "react"
 import { useSelector } from "react-redux"
 import { pdf } from "@react-pdf/renderer"
 
-import type { RootState } from "../store/store"
-import { NAME } from "../constants"
+import type { RootState } from "../../store/store.ts"
+import { NAME } from "../../constants.ts"
 
-import PDFDocument from "./PDFDocument"
+import PDFDocument from "./PDFDocument.tsx"
 
 const DownloadCVButton: React.FC = () => {
   const [loading, setLoading] = useState(false)

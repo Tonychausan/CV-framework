@@ -25,7 +25,7 @@ const AboutMe: React.FC = () => {
           typeSpeed={80}
         />
       </h2>
-      <p className="text-red-50 leading-relaxed mb-4 text-justify">
+      <p className="text-white leading-relaxed mb-4 text-justify">
         <Typewriter
           words={[aboutMe?.description || ""]}
           cursor={false}

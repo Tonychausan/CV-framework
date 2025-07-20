@@ -17,11 +17,11 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 0.6 }}
-      className="mb-6 bg-stone-850 border-stone-950 border rounded-lg overflow-hidden"
+      className="mb-4 border rounded-lg overflow-hidden shadow-2xl bg-stone-800 border-stone-900"
     >
       <button
         onClick={() => setExpanded(!expanded)}
-        className="w-full flex justify-between items-center p-4 text-left text-white hover:bg-gray-700 transition-colors duration-200 focus:outline-none"
+        className="w-full flex justify-between items-center p-4 text-left text-white hover:bg-stone-700 transition-colors duration-200 focus:outline-none"
       >
         <div>
           <h3 className="text-lg font-semibold">{experience.workTitle}</h3>

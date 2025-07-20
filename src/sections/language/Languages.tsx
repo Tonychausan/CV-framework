@@ -18,7 +18,7 @@ export const Languages: React.FC = () => {
           <Info className="w-5 h-5 text-red-400 cursor-pointer" />
           <div
             className="
-        absolute left-1/2 top-full mt-2 -translate-x-1/2 border
+        absolute left-1/2 top-full mt-2 -translate-x-1/2 border border-stone-600
         w-64 p-3 rounded shadow-lg text-sm text-gray-200 bg-stone-900
         opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10
       "
@@ -31,7 +31,7 @@ export const Languages: React.FC = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {languages?.map((lang, idx) => (
           <LanguageCard key={idx} language={lang} />
         ))}

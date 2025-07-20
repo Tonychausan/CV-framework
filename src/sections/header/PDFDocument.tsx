@@ -7,14 +7,14 @@ import {
   View,
 } from "@react-pdf/renderer"
 
-import { CONTENT_BASE, NAME, SECTION_TITLES } from "../constants.ts"
+import { CONTENT_BASE, NAME, SECTION_TITLES } from "../../constants.ts"
 import type {
   AboutMeData,
   ContactData,
   EducationItem,
   ExperienceItem,
   LanguageItem,
-} from "../types.ts"
+} from "../../types.ts"
 
 const styles = StyleSheet.create({
   page: {

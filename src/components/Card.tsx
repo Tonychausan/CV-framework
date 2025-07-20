@@ -14,7 +14,7 @@ const Card: React.FC<CardProps> = ({ children, className = "", delay = 0 }) => {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 0.6, delay }}
-      className={`rounded-lg shadow border p-4 bg-stone-850 border-stone-900 ${className}`}
+      className={`rounded-lg shadow border p-4 bg-stone-800 border-stone-900 ${className}`}
     >
       {children}
     </motion.div>
